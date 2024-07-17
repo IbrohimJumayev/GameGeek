@@ -8,7 +8,7 @@ import user from "../../assets/user.svg";
 import search from "../../assets/search.svg";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
   return (
     <div>
       <div className="bg-navColor flex justify-between py-5 px-24 text-white max-lg:px-5 items-center">
@@ -78,9 +78,14 @@ const Navbar = () => {
             alt=""
           />
           <Link to="/cart">
-            <span className="material-symbols-outlined pt-1 hover:scale-125 duration-300">
+            <span className="material-symbols-outlined pt-1 hover:scale-125 duration-300 relative">
               shopping_cart
             </span>
+            {cart.length > 0 && (
+              <div className="bg-green-600 text-white font-bold text-center rounded-full absolute px-1 text-xs top-24 right-21 ml-2 mt-1 max-sm:top-16 max-sm:mt-3">
+                {cart.length}
+              </div>
+            )}
           </Link>
         </div>
       </div>

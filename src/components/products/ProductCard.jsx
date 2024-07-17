@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product, price, id }) => {
+const ProductCard = ({ product, id, cart, setCart }) => {
   return (
     <div className="list-none w-full flex flex-col  p-5 relative group justify-between gap-6 pr-10">
       <img src={product.image_url} alt="" />
@@ -26,7 +26,10 @@ const ProductCard = ({ product, price, id }) => {
         <p className="font-readex text-xl font-bold">${product.price}</p>
       </div>
       <div>
-        <button className="rounded-xl bg-buttonColor text-white flex items-center py-4 px-8 gap-2 font-bold text-xl w-full">
+        <button
+          onClick={() => setCart([...cart, product])}
+          className="rounded-xl bg-buttonColor text-white flex items-center py-4 px-8 gap-2 font-bold text-xl w-full duration-75 hover:scale-95 active:bg-blue-600"
+        >
           <span class="material-symbols-outlined">shopping_cart</span>
           Add to Cart
         </button>

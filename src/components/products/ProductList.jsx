@@ -1,6 +1,14 @@
 import ProductCard from "./ProductCard";
 
-const ProductList = ({ products, loading, selctedBrand, selectedColor }) => {
+const ProductList = ({
+  products,
+  loading,
+  selctedBrand,
+  selectedColor,
+  filteredByPrice,
+  cart,
+  setCart
+}) => {
   const filteredProducts = products.filter(
     (product) =>
       (product.brand_name === selctedBrand || !selctedBrand) &&
@@ -15,6 +23,8 @@ const ProductList = ({ products, loading, selctedBrand, selectedColor }) => {
               id={product.id}
               product={product}
               price={product.price}
+              cart={cart}
+              setCart={setCart}
             />
           ))}
         </div>
