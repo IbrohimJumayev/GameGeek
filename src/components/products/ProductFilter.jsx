@@ -3,6 +3,7 @@ import { useState } from "react";
 const ProductFilter = ({products}) => {
   const [filter, setFilter] = useState(false);
   
+  
   return (
     <div>
       <div className="flex justify-between px-16 bg-filtredBack text-filtered py-5 max-sm:px-5 max-sm:py-2 text-2xl mt-10 max-sm:text-lg items-center">

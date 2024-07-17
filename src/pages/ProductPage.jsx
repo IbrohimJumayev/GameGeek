@@ -15,6 +15,8 @@ const ProductPage = () => {
   const brands = useSelector((store) => store.BrandsReducer.brands);
   const colors = useSelector((store) => store.ColorsReducer.colors);
   const [loading, setLoading] = useState(true);
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selctedBrand, setSelectedBrand] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -40,7 +42,7 @@ const ProductPage = () => {
       }
     };
     fetchBrands();
-  });
+  },[]);
 
   useEffect(() => {
     const fetchColors = async () => {
@@ -52,7 +54,7 @@ const ProductPage = () => {
       }
     };
     fetchColors();
-  });
+  },[]);
 
   return (
     <>
@@ -63,8 +65,22 @@ const ProductPage = () => {
           <ProductFilter products={products} />
           <div className="flex max-sm:flex-col ml-14 max-sm:ml-0">
             <Loader loading={loading} />
-            <FilterAside brands={brands} colors={colors} />
-            <ProductList products={products} loading={loading} />
+            <FilterAside
+              brands={brands}
+              colors={colors}
+              selctedBrand={selctedBrand}
+              selectedColor={selectedColor}
+              setSelectedBrand={setSelectedBrand}
+              setSelectedColor={setSelectedColor}
+            />
+            <ProductList
+              products={products}
+              loading={loading}
+              selctedBrand={selctedBrand}
+              selectedColor={selectedColor}
+              setSelectedBrand={setSelectedBrand}
+              setSelectedColor={setSelectedColor}
+            />
           </div>
         </div>
       )}

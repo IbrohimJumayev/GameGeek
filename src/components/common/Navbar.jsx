@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="bg-navColor flex justify-between py-5 px-24 text-white max-lg:px-5">
+      <div className="bg-navColor flex justify-between py-5 px-24 text-white max-lg:px-5 items-center">
         <div className="flex gap-4">
           <div className="flex items-center gap-8 cursor-pointer">
             <img src={GG} alt="logo" />
@@ -47,7 +47,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl py-10 border-b-2 border-navBorderColor m-auto flex justify-between px-10 max-sm:py-4 max-sm:px-4">
+      <div className="max-w-7xl py-10 border-b-2 border-navBorderColor m-auto flex items-center justify-between px-10 max-sm:py-4 max-sm:px-4">
         <div>
           <Link to="/">
             <img className="cursor-pointer" src={logo} alt="" />

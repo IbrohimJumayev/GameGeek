@@ -1,6 +1,4 @@
-
-
-const BrandFilter = ({brands}) => {
+const BrandFilter = ({ brands, selctedBrand, setSelectedBrand }) => {
   return (
     <div>
       <h1 className="text-xl font-bold mb-6">BRANDS</h1>
@@ -11,8 +9,11 @@ const BrandFilter = ({brands}) => {
         >
           <input
             type="radio"
+            onChange={(e) => setSelectedBrand(e.target.value)}
             name="brand"
+            value={b}
             id={index}
+            checked={selctedBrand === b}
             className="peer appearance-none border-2 border-green-500 rounded-md w-5 h-5 checked:bg-green-500 checked:border-green-500"
           />
           <label
@@ -25,6 +26,6 @@ const BrandFilter = ({brands}) => {
       ))}
     </div>
   );
-}
+};
 
-export default BrandFilter
+export default BrandFilter;
