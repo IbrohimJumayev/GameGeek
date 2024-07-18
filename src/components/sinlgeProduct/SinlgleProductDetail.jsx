@@ -3,7 +3,7 @@ import stars from "../../assets/stars.svg";
 import c from "../../assets/c.svg";
 import deliver from "../../assets/bus.svg";
 
-const SinlgleProductDetail = ({ product }) => {
+const SinlgleProductDetail = ({ product, cart, setCart }) => {
   const [count, setCount] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
   return (
@@ -20,7 +20,7 @@ const SinlgleProductDetail = ({ product }) => {
       </div>
       <div className="mt-8 pb-7 border-b-2 border-dashed border-filterBorder">
         <strong className="font-readex text-4xl max-sm:text-2xl font-bold">
-          ${product.price} or {Math.floor(product.price / 12)}/month
+          ${product.price} or {Math.floor(product.price / 6)}/month
         </strong>
         <p className="text-spec font-medium text-lg mt-3">
           Suggested payments with 6 month special financing
@@ -64,7 +64,10 @@ const SinlgleProductDetail = ({ product }) => {
         </p>
       </div>
       <div className="flex gap-4">
-        <button className="rounded-xl bg-buttonColor text-white flex items-center py-4 px-8 gap-2 font-bold text-xl w-full">
+        <button
+          onClick={() => setCart([...cart, product])}
+          className="rounded-xl bg-buttonColor text-white flex items-center py-4 px-8 gap-2 font-bold text-xl w-full active:bg-blue-600 duration-75"
+        >
           <span class="material-symbols-outlined">shopping_cart</span>
           Add to Cart
         </button>

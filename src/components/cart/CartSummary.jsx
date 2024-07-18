@@ -36,7 +36,7 @@ const CartSummary = ({ cart, navigate }) => {
       </div>
       <div className="flex justify-center">
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/products")}
           className="flex items-center gap-2 font-semibold active:text-green-500 duration-75 active:scale-95 mt-12 mb-10 max-sm:mt-5"
         >
           <span className="material-symbols-outlined">arrow_back</span>

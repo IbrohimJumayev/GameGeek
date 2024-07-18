@@ -33,7 +33,7 @@ const FilterAside = ({
           setSelectedBrand(""), setSelectedColor("");
         }}
       >
-        Reset Filter
+        Clear Filter
       </button>
     </div>
   );

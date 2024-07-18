@@ -4,7 +4,7 @@ import api from "../../api/api";
 import SingleProductLook from "./SingleProductLook";
 import SinlgleProductDetail from "./SinlgleProductDetail";
 
-const SingleCard = () => {
+const SingleCard = ({cart, setCart}) => {
   const { id } = useParams();
   const [product, setProduct] = useState("");
   const [loading, setLoading] = useState(true);
@@ -30,7 +30,7 @@ const SingleCard = () => {
         <div>
           <div className="flex mt-24 max-w-7xl m-auto max-md:flex-col max-sm:mt-5 max-sm:px-5 px-5 gap-9">
             <SingleProductLook product={product} />
-            <SinlgleProductDetail product={product} />
+            <SinlgleProductDetail product={product} cart={cart} setCart={setCart}  />
           </div>
         </div>
       )}

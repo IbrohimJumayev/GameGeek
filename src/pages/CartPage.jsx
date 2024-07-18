@@ -12,7 +12,7 @@ const CartPage = ({ cart }) => {
           </h1>
           <img className="pl-36 max-sm:pl-0" src="/empty.png" alt="" />
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/products")}
             className="px-4 py-2 rounded-xl bg-blue-500 text-white text-2xl max-sm:w-full "
           >
             add products to cart
@@ -21,7 +21,7 @@ const CartPage = ({ cart }) => {
       ) : (
         <div className="mt-16 max-sm:mt-5 max-w-7xl m-auto px-2 ">
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/products")}
             className="flex items-center gap-2 font-semibold active:text-green-500 duration-75 active:scale-95 max-md:px-5"
           >
             <span className="material-symbols-outlined">arrow_back</span>Back to

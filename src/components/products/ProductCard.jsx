@@ -5,7 +5,7 @@ const ProductCard = ({ product, id, cart, setCart }) => {
     <div className="list-none w-full flex flex-col  p-5 relative group justify-between gap-6 pr-10">
       <img src={product.image_url} alt="" />
       <div>
-        <Link to={`/${id}`}>
+        <Link to={`/products/${id}`}>
           <h2 className="font-hummisher text-xl font-bold">{product.name}</h2>
         </Link>
 

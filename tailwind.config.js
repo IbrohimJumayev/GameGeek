@@ -19,6 +19,7 @@ export default {
         prDetaiCol: "#190D26",
         spec: "#0D2612",
         bgBorder: "#F5F5F5",
+        homeBtn: "#21D511",
       },
     },
   },

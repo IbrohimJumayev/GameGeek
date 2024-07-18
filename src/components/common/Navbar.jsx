@@ -7,8 +7,11 @@ import cart from "../../assets/cart.svg";
 import user from "../../assets/user.svg";
 import search from "../../assets/search.svg";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Navbar = ({ cart }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   return (
     <div>
       <div className="bg-navColor flex justify-between py-5 px-24 text-white max-lg:px-5 items-center">
@@ -47,7 +50,12 @@ const Navbar = ({ cart }) => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl py-10 border-b-2 border-navBorderColor m-auto flex items-center justify-between px-10 max-sm:py-4 max-sm:px-4">
+
+      <div
+        className={
+          "max-w-7xl py-10 border-b-2  border-navBorderColor m-auto flex items-center justify-between px-10 max-sm:py-4 max-sm:px-4"
+        }
+      >
         <div>
           <Link to="/">
             <img className="cursor-pointer" src={logo} alt="" />
@@ -55,18 +63,24 @@ const Navbar = ({ cart }) => {
         </div>
         <ul className="flex gap-10 font-medium cursor-pointer max-lg:hidden ">
           <Link to="/">
-            <li className="hover:text-green-60 active:text-green-700">
-              Products
-            </li>
+            <li className="hover:text-green-60 active:text-green-700">Home</li>
+          </Link>
+          <Link to='/products'>
+            <li className="hover:text-green-600">Products</li>
           </Link>
 
-          <li className="hover:text-green-600">Brands</li>
           <li className="hover:text-green-600">What’s new</li>
           <li className="hover:text-green-600">Sales</li>
           <li className="hover:text-green-600">Help</li>
           <li className="hover:text-green-600">About</li>
         </ul>
-        <div className="flex gap-10 max-sm:gap-4 ">
+        <div className="flex gap-10 max-sm:gap-2 items-center ">
+          <Link to="/products">
+            <span className="material-symbols-outlined hidden max-lg:block">
+              inventory_2
+            </span>
+          </Link>
+
           <img
             className="cursor-pointer hover:scale-125 duration-300"
             src={search}

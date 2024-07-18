@@ -4,6 +4,7 @@ import CartPage from "./pages/CartPage";
 import { Routes, Route } from "react-router-dom";
 import SingleCard from "./components/sinlgeProduct/SingleCard";
 import { useState } from "react";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -11,8 +12,9 @@ function App() {
     <div>
       <Navbar cart={cart} />
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route
-          path="/"
+          path="/products"
           element={<ProductPage cart={cart} setCart={setCart} />}
         />
         <Route
@@ -20,7 +22,7 @@ function App() {
           element={<CartPage cart={cart} setCart={setCart} />}
         />
         <Route
-          path="/:id"
+          path="/products/:id"
           element={<SingleCard cart={cart} setCart={setCart} />}
         />
       </Routes>
