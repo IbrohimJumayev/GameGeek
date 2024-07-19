@@ -43,7 +43,7 @@ const SinlgleProductDetail = ({ product, cart, setCart }) => {
         </div>
       </div>
       <div className="mt-11 font-bold text-2xl max-sm:text-lg flex gap-16 items-center mb-12">
-        <button className="px-8 py-5 bg-bgBorder flex gap-8 border-4 rounded-full border-green-600 items-center  ">
+        <button className="px-8 py-5 max-sm:px-4 max-sm:py-2 bg-bgBorder flex gap-8 border-4 rounded-full border-green-600 items-center  ">
           <span
             onClick={() => setCount(count - 1)}
             className="material-symbols-outlined"
@@ -58,7 +58,7 @@ const SinlgleProductDetail = ({ product, cart, setCart }) => {
             add
           </span>
         </button>
-        <p>
+        <p className="max-sm:text-sm">
           Only <span className="text-green-600">16 items </span>left! <br />{" "}
           Don’t miss it
         </p>
@@ -78,9 +78,9 @@ const SinlgleProductDetail = ({ product, cart, setCart }) => {
             color: isFavorite ? "white" : "",
             borderColor: isFavorite ? "red" : "",
           }}
-          className="border-4 border-black rounded-lg px-3 py-2 checked:bg-red-600"
+          className="border-4 border-black rounded-lg px-3 py-2 max-sm:px-2 max-sm:py-0 duration-300  checked:bg-red-600"
         >
-          <span className="material-symbols-outlined font-bold text-4xl">
+          <span className="material-symbols-outlined font-bold text-4xl pt-1">
             favorite
           </span>
         </button>

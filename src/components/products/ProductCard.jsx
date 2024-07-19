@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductCard = ({ product, id, cart, setCart }) => {
   return (
@@ -27,7 +29,7 @@ const ProductCard = ({ product, id, cart, setCart }) => {
       </div>
       <div>
         <button
-          onClick={() => setCart([...cart, product])}
+          onClick={() => {setCart([...cart, product]), toast("product added")}}
           className="rounded-xl bg-buttonColor text-white flex items-center py-4 px-8 gap-2 font-bold text-xl w-full duration-75 hover:scale-95 active:bg-blue-600"
         >
           <span class="material-symbols-outlined">shopping_cart</span>

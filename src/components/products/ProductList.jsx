@@ -7,13 +7,15 @@ const ProductList = ({
   selectedColor,
   filteredByPrice,
   cart,
-  setCart
+  setCart,
+  filter, 
+  setFilter
 }) => {
   const filteredProducts = products.filter(
     (product) =>
       (product.brand_name === selctedBrand || !selctedBrand) &&
       (product.color_options.includes(selectedColor) || !selectedColor)
-  );
+  )
   return (
     <>
       <div>

@@ -9,7 +9,7 @@ import { getColors } from "../features/ColorsSlice";
 import ProductFilter from "../components/products/ProductFilter";
 import Loader from "../components/products/Loader";
 
-const ProductPage = ({cart, setCart}) => {
+const ProductPage = ({ cart, setCart }) => {
   const dispatch = useDispatch();
   const products = useSelector((store) => store.productsReducer.products);
   const brands = useSelector((store) => store.BrandsReducer.brands);
@@ -19,9 +19,6 @@ const ProductPage = ({cart, setCart}) => {
   const [selctedBrand, setSelectedBrand] = useState("");
   const [filter, setFilter] = useState(false);
 
-  const filteredByPrice = filter
-    ? [...products].sort((a, b) => a - b)
-    : [...products].sort((a, b) => b - a);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -83,7 +80,6 @@ const ProductPage = ({cart, setCart}) => {
               setSelectedColor={setSelectedColor}
             />
             <ProductList
-              filteredByPrice={filteredByPrice}
               products={products}
               loading={loading}
               selctedBrand={selctedBrand}
@@ -92,6 +88,8 @@ const ProductPage = ({cart, setCart}) => {
               setSelectedColor={setSelectedColor}
               cart={cart}
               setCart={setCart}
+              filter={filter}
+              setFilter={setFilter}
             />
           </div>
         </div>
