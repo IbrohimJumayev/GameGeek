@@ -1,12 +1,21 @@
 import { useNavigate } from "react-router-dom";
 import CartSummary from "../components/cart/CartSummary";
+import Aos from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 const CartPage = ({ cart }) => {
+  useEffect(() => {
+    Aos.init({ duration: 1400 });
+  }, []);
   const navigate = useNavigate();
   return (
     <>
       {cart.length === 0 ? (
-        <div className="max-w-3xl m-auto text-center mt-10 px-5">
+        <div
+          data-aos="fade-up"
+          className="max-w-3xl m-auto text-center mt-10 px-5"
+        >
           <h1 className="font-hummisher font-bold text-blue-500 text-xl">
             Your Cart is Empty
           </h1>
@@ -19,7 +28,10 @@ const CartPage = ({ cart }) => {
           </button>
         </div>
       ) : (
-        <div className="mt-16 max-sm:mt-5 max-w-7xl m-auto px-2 ">
+        <div
+          data-aos="fade-right"
+          className="mt-16 max-sm:mt-5 max-w-7xl m-auto px-2 "
+        >
           <button
             onClick={() => navigate("/products")}
             className="flex items-center gap-2 font-semibold active:text-green-500 duration-75 active:scale-95 max-md:px-5"

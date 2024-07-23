@@ -1,5 +1,8 @@
 import BrandFilter from "./BrandFilter";
 import ColorFilter from "./ColorFilter";
+import Aos from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 const FilterAside = ({
   colors,
@@ -9,8 +12,14 @@ const FilterAside = ({
   setSelectedBrand,
   selctedBrand,
 }) => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
-    <div className="w-64 max-sm:w-full ml-0 mt-14 font-readex max-sm:ml-0 max-sm:px-5 ">
+    <div
+      data-aos="fade-right"
+      className="w-64 max-sm:w-full ml-0 mt-14 font-readex max-sm:ml-0 max-sm:px-5 "
+    >
       <div className="border-t-2 border-dashed border-filterBorder pt-7 pb-7 pr-16">
         <BrandFilter
           brands={brands}

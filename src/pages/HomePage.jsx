@@ -1,11 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import Aos from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <div className="text-white bg-spec">
       <div className="homeTop text-white">
-        <div className="pl-48 mt-20 max-sm:mt-32 max-sm:pl-4  max-sm:text-center">
+        <div
+          data-aos="fade-right"
+          className="pl-48 mt-20 max-sm:mt-32 max-sm:pl-4  max-sm:text-center"
+        >
           <h1 className="font-hummisher text-6xl max-sm:text-4xl leading-tight text-homeBtn  ">
             START YOUR GAME <br /> WITH THE BEST
           </h1>
@@ -29,7 +38,10 @@ const HomePage = () => {
       </div>
       <div className="max-w-5xl m-auto mt-20 max-sm:mt-10 flex-col text-center px-5">
         <h2 className="text-center">Discover news and innovations</h2>
-        <div className="mt-20 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center pb-20 max-sm:mt-10  items-center ">
+        <div
+          data-aos="fade-up"
+          className="mt-20 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center pb-20 max-sm:mt-10  items-center "
+        >
           <div className="flex-col  w-full items-center">
             <img className="m-auto" src="/card1.png" alt="Card 1" />
             <p className="font-hummisher text-2xl font-semibold mb-4 mt-7">
